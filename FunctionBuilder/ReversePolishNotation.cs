@@ -57,7 +57,7 @@ namespace FunctionBuilder.Logic
                         }
                     if (stack.Count >= 2)                           // x + x / x * x + x-> опустошить стек
                         if (lastPriority >= stack.Peek().Priority)
-                            ToEmptyStackWithoutFirst(ref stack);
+                            ToEmptyStackWithoutFirst(ref stack, stack.Peek().Priority);
                 }
 
                 if (flag)                                           //завершение метода при завершающей скобке
@@ -66,7 +66,7 @@ namespace FunctionBuilder.Logic
             if (stack.Count > 0 && !flag)                           //опустошение локального стека
                 ToEmptyStack(ref stack);
         }
-        private void ToEmptyStackWithoutFirst(ref Stack<Operation> stack)
+        private void ToEmptyStackWithoutFirst(ref Stack<Operation> stack, int priority)
         {
             Operation oper;
             if (stack.Count > 0)
@@ -74,7 +74,7 @@ namespace FunctionBuilder.Logic
             else
                 throw new Exception("Empty stack!");
 
-            while (stack.Count > 0)
+            while (stack.Count > 0 && stack.Peek().Priority >= priority)
             {
                 output.Add(stack.Pop());
             }
