@@ -8,7 +8,7 @@ namespace Fun
     {
         static void Main()
         {
-            var f = new Function("13,2-1");
+            var f = new Function("log(2^2;sqrt(1024))");
             Console.WriteLine($"ОПЗ = {f.ReversePolishNotation}, решение = {f.Answer}");
             Console.ReadKey();
         }
