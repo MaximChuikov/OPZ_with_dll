@@ -8,69 +8,70 @@ namespace FunctionBuilder.Logic
     {
         private List<object> output = new List<object>();
         private int i = 0;
-
-        public ReversePolishNotation(string exp)
+        public ReversePolishNotation(object[] tokens)
         {
-            Iteration(exp);
+            Iteration(tokens);
         }
-        public ReversePolishNotation(string exp, ref object[] array)
+        public ReversePolishNotation(object[] tokens, ref object[] array)
         {
-            Iteration(exp);
+            Iteration(tokens);
             array = output.ToArray();
         }
-
-        void Iteration(string exp)
+        void Iteration(object[] tokens)
         {
             var stack = new Stack<Operation>();
             int lastPriority;
-            bool flag = false;
-            for (; i < exp.Length; i++)
+            for (; i < tokens.Length; i++)
             {
-                if (char.IsWhiteSpace(exp[i]))                  //пропуск пробелов
-                    continue;
-
-                if (stack.Count != 0)                           //сохр. last знач. стека
+                if (stack.Count != 0)
                     lastPriority = stack.Peek().Priority;
                 else
                     lastPriority = 0;
 
-                if (char.IsDigit(exp[i]))                       //считывание цифры
+                if (tokens[i] is decimal)
                 {
-                    output.Add(ReadDigit(exp));
+                    output.Add(tokens[i]);
                     continue;
                 }
-                else                                            //считывание операции
+                if (tokens[i] is Parenthessis parenthess)
+                    if (parenthess.IsOpening)
+                    {
+                        i++;
+                        Iteration(tokens);
+                        continue;
+                    }
+                    else
+                    {
+                        ToEmptyStack(ref stack);
+                        break;
+                    }
+                else if (tokens[i] is Operation operation)
                 {
-                    if (!AddOperationToStack(ref stack, exp[i]))
-                        switch (exp[i])
+                    if (operation.IsPrefix)
+                    {
+                        for(int j = 0; j < operation.Args; j++)
                         {
-                            case '(':
-                                i++;
-                                Iteration(exp);
-                                continue;
-                            case ')':
-                                ToEmptyStack(ref stack);
-                                flag = true;
-                                break;
-                            default:
-                                throw new Exception("Unkown operation!");
+                            i += 2;    //пропуск скобок )(
+                            Iteration(tokens);
                         }
-                    if (stack.Count >= 2)                           // x + x / x * x + x-> опустошить стек
-                        if (lastPriority >= stack.Peek().Priority)
-                            ToEmptyStackWithoutFirst(ref stack, stack.Peek().Priority);
+                        output.Add(operation);
+                    }
+                    else if (operation.IsMiddle)
+                        stack.Push((Operation)tokens[i]);
                 }
 
-                if (flag)                                           //завершение метода при завершающей скобке
-                    break;
+                if (stack.Count >= 2)
+                    if (lastPriority >= stack.Peek().Priority)
+                        ToEmptyStackNoFirstToLesserPriority(ref stack, stack.Peek().Priority);
             }
-            if (stack.Count > 0 && !flag)                           //опустошение локального стека
+            if (stack.Count > 0)
                 ToEmptyStack(ref stack);
         }
-        private void ToEmptyStackWithoutFirst(ref Stack<Operation> stack, int priority)
+        private void ToEmptyStackNoFirstToLesserPriority(ref Stack<Operation> stack, int priority)
         {
-            Operation oper;
+            Operation temp;
             if (stack.Count > 0)
-                oper = stack.Pop();
+                temp = stack.Pop();
             else
                 throw new Exception("Empty stack!");
 
@@ -79,7 +80,7 @@ namespace FunctionBuilder.Logic
                 output.Add(stack.Pop());
             }
 
-            stack.Push(oper);
+            stack.Push(temp);
         }
         private void ToEmptyStack(ref Stack<Operation> stack)
         {
@@ -88,52 +89,6 @@ namespace FunctionBuilder.Logic
                 output.Add(stack.Pop());
             }
         }
-        decimal ReadDigit(string exp)
-        {
-            var number = new StringBuilder();
-            while (char.IsDigit(exp[i]) || exp[i] == ',')
-            {
-                number.Append(exp[i]);
-                i++;
-
-                if (i >= exp.Length)
-                    break;
-            }
-
-            i--;
-
-            try
-            {
-                return decimal.Parse(number.ToString());
-            }
-            catch
-            {
-                throw new Exception("\nInvalid number! " + number);
-            }
-        }
-
-        private bool AddOperationToStack(ref Stack<Operation> stack, char operation)
-        {
-            switch (operation)
-            {
-                case '+':
-                    stack.Push(new Plus());
-                    break;
-                case '-':
-                    stack.Push(new Minus());
-                    break;
-                case '*':
-                    stack.Push(new Multiply());
-                    break;
-                case '/':
-                    stack.Push(new Divide());
-                    break;
-                default:
-                    return false;
-            }
-            return true;
-        }
-
         public override string ToString()
         {
             var result = new StringBuilder();
@@ -141,6 +96,8 @@ namespace FunctionBuilder.Logic
             {
                 result.Append(str.ToString() + " ");
             }
+            if (result.Length != 0)
+                result.Remove(result.Length - 1, 1);
             return result.ToString();
         }
     }

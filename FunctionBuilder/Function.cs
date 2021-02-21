@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FunctionBuilder.Logic
+﻿namespace FunctionBuilder.Logic
 {
     public class Function
     {
@@ -11,7 +7,7 @@ namespace FunctionBuilder.Logic
         private object[] array;
         public Function(string expression)
         {
-            ReversePolishNotation = new ReversePolishNotation(expression, ref array).ToString();
+            ReversePolishNotation = new ReversePolishNotation(new ToTokensTranslator(expression).TokensArray, ref array).ToString();
             Answer = new ReversePolishNotationSolver(array).GetValue();
         }
     }
