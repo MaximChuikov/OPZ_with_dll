@@ -15,7 +15,7 @@ namespace FunctionBuilder.Logic
         }
         void Iteration(object[] tokens)
         {
-            var stack = new Stack<Operation>();
+            var stack = new Stack<Operation>(); //локальный стек, метод вызывается рекурсивно и у каждого свой стек
             int lastPriority;
             for (; i < tokens.Length; i++)
             {
@@ -24,7 +24,7 @@ namespace FunctionBuilder.Logic
                 else
                     lastPriority = 0;
 
-                if (tokens[i] is decimal || tokens[i] is Variable)
+                if (tokens[i] is decimal || tokens[i] is Variable)  //добавляем любое число
                 {
                     output.Add(tokens[i]);
                     continue;
@@ -34,34 +34,34 @@ namespace FunctionBuilder.Logic
                     if (parenthess.IsOpening)
                     {
                         i++;
-                        Iteration(tokens);
+                        Iteration(tokens);                          //при скобке запускаем рекурсию
                         continue;
                     }
                     else
                     {
-                        break;
+                        break;                                      //завершение рекурсивного метода при )
                     }
                 else if (tokens[i] is Operation operation)
                 {
-                    if (operation.IsPrefix)
-                    {
+                    if (operation.IsPrefix)                         //у префиксной операции сначала считаем аргументы, потом
+                    {                                               //приписываем саму операцию
                         for(int j = 0; j < operation.Args; j++)
                         {
-                            i += 2;    //пропуск скобок )(
+                            i += 2;    //пропуск скобок )( или бывшего ;
                             Iteration(tokens);
                         }
                         output.Add(operation);
                     }
-                    else if (operation.IsMiddle)
+                    else if (operation.IsMiddle)                    //при простой операции пушим
                         stack.Push((Operation)tokens[i]);
                 }
 
                 if (stack.Count >= 2)
                     if (lastPriority >= stack.Peek().Priority)
-                        ToEmptyStackNoFirstToLesserPriority(ref stack, stack.Peek().Priority);
-            }
+                        ToEmptyStackNoFirstToLesserPriority(ref stack, stack.Peek().Priority);  //очистка стека по приоритету и
+            }                                                                                   //без 1 операции в стеке
             if (stack.Count > 0)
-                ToEmptyStack(ref stack);
+                ToEmptyStack(ref stack);    //завершение метода - выгрузка стека
         }
         private void ToEmptyStackNoFirstToLesserPriority(ref Stack<Operation> stack, int priority)
         {
