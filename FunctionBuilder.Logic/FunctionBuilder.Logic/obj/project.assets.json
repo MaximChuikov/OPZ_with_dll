@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Максим\\source\\repos\\FunctionBuilder.Logic\\FunctionBuilder.Logic\\FunctionBuilder.Logic.csproj",
+      "projectUniqueName": "C:\\Users\\Максим\\source\\repos\\OPZ_with_dll\\FunctionBuilder.Logic\\FunctionBuilder.Logic\\FunctionBuilder.Logic.csproj",
       "projectName": "FunctionBuilder.Logic",
-      "projectPath": "C:\\Users\\Максим\\source\\repos\\FunctionBuilder.Logic\\FunctionBuilder.Logic\\FunctionBuilder.Logic.csproj",
+      "projectPath": "C:\\Users\\Максим\\source\\repos\\OPZ_with_dll\\FunctionBuilder.Logic\\FunctionBuilder.Logic\\FunctionBuilder.Logic.csproj",
       "packagesPath": "C:\\Users\\Максим\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Максим\\source\\repos\\FunctionBuilder.Logic\\FunctionBuilder.Logic\\obj\\",
+      "outputPath": "C:\\Users\\Максим\\source\\repos\\OPZ_with_dll\\FunctionBuilder.Logic\\FunctionBuilder.Logic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Максим\\AppData\\Roaming\\NuGet\\NuGet.Config"

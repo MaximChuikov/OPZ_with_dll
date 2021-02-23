@@ -21,13 +21,13 @@ namespace FunctionBuilder.Logic
             {
                 if (char.IsDigit(exp[i]))
                 {
-                    if (tokensList.Count == 1 && tokensList[0] is Minus)
+                    if (tokensList.Count == 1 && tokensList[0] is Minus) //если минус стоит первым в строке
                     {
                         ChangeLastElement(ref tokensList, (object)(-1 * ReadDigit(exp, ref i)));
                     }
                     else if (tokensList.Count >= 2)
                     {
-                        if (tokensList[tokensList.Count - 1] is Minus)
+                        if (tokensList[tokensList.Count - 1] is Minus) //если дальше первого
                         {
                             len = tokensList.Count;
                             if (tokensList[len - 2] is Operation || tokensList[len - 2] is Parenthessis)
@@ -35,22 +35,22 @@ namespace FunctionBuilder.Logic
                                 ChangeLastElement(ref tokensList, (object)(-1 * ReadDigit(exp, ref i)));
                             }
                         }
-                        else
+                        else //просто число
                         {
                             tokensList.Add((object)ReadDigit(exp, ref i));
                         }
                     }
                 }
-                else if (exp[i] == x.name)
+                else if (exp[i] == x.name) //переменная
                     tokensList.Add((object)x);
-                else if (exp[i] == ';')
+                else if (exp[i] == ';') //вместо (;) разделяю на ()() 
                 {
                     tokensList.Add(new Parenthessis(")"));
                     tokensList.Add(new Parenthessis("("));
                 }
                 else
                 {
-                    tokensList.Add(DefineOperation(ReadOperation(exp, ref i)));
+                    tokensList.Add(DefineOperation(ReadOperation(exp, ref i))); //добавить операцию
                 }
             }
             return tokensList.ToArray();
