@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Z4zcjdnIqnS+/+VJccJWuYpVUSFZcKXysix3QSQekDkn7KW5zIrI5cmDPqvxlvgOthlVEMVxUBgBUFnBJFpG+w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Максим\\source\\repos\\Drawer\\FunctionBuilder.Logic\\FunctionBuilder.Logic\\FunctionBuilder.Logic.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Максим\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Максим\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
