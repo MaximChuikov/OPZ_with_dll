@@ -8,7 +8,7 @@ namespace Fun
     {
         static void Main()
         {
-            var f = new Function("log((-2*x)^2+1,1;x^4+sqrt((sin(x)+arccos(x/10))^2)");
+            var f = new Function("(-10+4*x)^2-(16*x^2-80*x+100)");
             Console.WriteLine($"ОПЗ = {f.ReversePolishNotation}");
             for (decimal i = 1; i < 10; i += (decimal)0.5)
             {

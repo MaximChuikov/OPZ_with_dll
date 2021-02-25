@@ -30,5 +30,9 @@
             ReversePolishNotation = new ReversePolishNotation(new ToTokensTranslator(expression, x).TokensArray, out array).ToString();
             solver = new ReversePolishNotationSolver(array, x);
         }
+        public override string ToString()
+        {
+            return ReversePolishNotation;
+        }
     }
 }
