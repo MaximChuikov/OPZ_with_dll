@@ -192,12 +192,14 @@
       "outputPath": "C:\\Users\\Максим\\source\\repos\\OPZ_with_dll\\FunctionBuilder.Logic\\FunctionBuilder.Logic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Максим\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Максим\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

@@ -16,29 +16,48 @@ namespace FunctionBuilder.Logic
             exp = DeleteSpaces(exp);    //очистка от пробелов
             var tokensList = new List<object>();
             int i = 0;
+            bool leftIsMinus = false;
             int len;
             for (; i < exp.Length; i++)
             {
                 if (char.IsDigit(exp[i]))
                 {
-                    if (tokensList.Count == 1 && tokensList[0] is Minus) //если минус стоит первым в строке
+                    try 
                     {
-                        ChangeLastElement(ref tokensList, (object)(-1 * ReadDigit(exp, ref i)));
+                        if (tokensList[i - 1] is Minus)
+                            leftIsMinus = true;
+                        else
+                            leftIsMinus = false;
                     }
-                    else if (tokensList.Count >= 2)
+                    catch
                     {
-                        if (tokensList[tokensList.Count - 1] is Minus) //если дальше первого
+                        leftIsMinus = false;
+                    }
+
+                    if (leftIsMinus)
+                    {
+                        try
                         {
                             len = tokensList.Count;
                             if (tokensList[len - 2] is Operation || tokensList[len - 2] is Parenthessis)
                             {
                                 ChangeLastElement(ref tokensList, (object)(-1 * ReadDigit(exp, ref i)));
+                                continue;
+                            }
+                            else
+                            {
+                                tokensList.Add(ReadDigit(exp, ref i));
                             }
                         }
-                        else //просто число
+                        catch
                         {
-                            tokensList.Add((object)ReadDigit(exp, ref i));
+                            ChangeLastElement(ref tokensList, (object)(-1 * ReadDigit(exp, ref i)));
+                            continue;
                         }
+                    }
+                    else
+                    {
+                        tokensList.Add(ReadDigit(exp, ref i));
                     }
                 }
                 else if (exp[i] == x.name) //переменная
