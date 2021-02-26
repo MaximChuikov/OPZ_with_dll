@@ -22,3 +22,4 @@ C:\Users\Максим\source\repos\OPZ_with_dll\FunctionBuilder.Logic\FunctionBu
 C:\Users\Максим\source\repos\OPZ_with_dll\FunctionBuilder.Logic\FunctionBuilder.Logic\obj\Debug\netstandard2.0\FunctionBuilder.Logic.csproj.CoreCompileInputs.cache
 C:\Users\Максим\source\repos\OPZ_with_dll\FunctionBuilder.Logic\FunctionBuilder.Logic\obj\Debug\netstandard2.0\FunctionBuilder.Logic.dll
 C:\Users\Максим\source\repos\OPZ_with_dll\FunctionBuilder.Logic\FunctionBuilder.Logic\obj\Debug\netstandard2.0\FunctionBuilder.Logic.pdb
+C:\Users\Максим\source\repos\OPZ_with_dll\FunctionBuilder.Logic\FunctionBuilder.Logic\obj\Debug\netstandard2.0\FunctionBuilder.Logic.csprojAssemblyReference.cache

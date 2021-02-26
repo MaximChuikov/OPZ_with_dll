@@ -1,7 +1,7 @@
 ﻿using System;
 namespace FunctionBuilder.Logic
 {
-    class Variable
+    public class Variable
     {
         public Variable(char name, decimal value)
         {
@@ -153,7 +153,7 @@ namespace FunctionBuilder.Logic
             if (args.Length != 1)
                 throw new Exception("Нужен 1 аргумент");
             if (args[0] < 0)
-                throw new Exception("Аргумент должен быть > 0");
+                throw new Exception("Аргумент должен быть >= 0");
             return (decimal)Math.Sqrt((double)args[0]);
         }
     }

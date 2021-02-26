@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FunctionBuilder.Logic
 {
-    class ToTokensTranslator
+    public class ToTokensTranslator
     {
         public object[] TokensArray { get; }
         public ToTokensTranslator(string expression, Variable x)
@@ -22,9 +22,10 @@ namespace FunctionBuilder.Logic
             {
                 if (char.IsDigit(exp[i]))
                 {
+                    len = tokensList.Count;
                     try 
                     {
-                        if (tokensList[i - 1] is Minus)
+                        if (tokensList[len - 1] is Minus)
                             leftIsMinus = true;
                         else
                             leftIsMinus = false;
@@ -38,7 +39,6 @@ namespace FunctionBuilder.Logic
                     {
                         try
                         {
-                            len = tokensList.Count;
                             if (tokensList[len - 2] is Operation || tokensList[len - 2] is Parenthessis)
                             {
                                 ChangeLastElement(ref tokensList, (object)(-1 * ReadDigit(exp, ref i)));
