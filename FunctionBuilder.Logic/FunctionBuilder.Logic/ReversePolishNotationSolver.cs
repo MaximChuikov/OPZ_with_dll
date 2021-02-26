@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 namespace FunctionBuilder.Logic
 {
-    class ReversePolishNotationSolver
+    public class ReversePolishNotationSolver
     {
         public decimal answer { get; private set; }
         private object[] array;     //хранение массива токенов

@@ -4,10 +4,14 @@ using System.Text;
 
 namespace FunctionBuilder.Logic
 {
-    class ReversePolishNotation
+    public class ReversePolishNotation
     {
         private List<object> output = new List<object>();
         private int i = 0;
+        public ReversePolishNotation(object[] tokens)
+        {
+            Iteration(tokens);
+        }
         public ReversePolishNotation(object[] tokens, out object[] array)
         {
             Iteration(tokens);
