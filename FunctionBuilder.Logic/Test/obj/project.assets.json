@@ -4668,6 +4668,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
             "C:\\Users\\Максим\\source\\repos\\OPZ_with_dll\\FunctionBuilder.Logic\\FunctionBuilder.Logic\\FunctionBuilder.Logic.csproj": {
               "projectPath": "C:\\Users\\Максим\\source\\repos\\OPZ_with_dll\\FunctionBuilder.Logic\\FunctionBuilder.Logic\\FunctionBuilder.Logic.csproj"
@@ -4683,6 +4684,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
@@ -4712,7 +4714,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

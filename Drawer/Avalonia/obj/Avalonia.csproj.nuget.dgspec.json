@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Максим\\source\\repos\\OPZ_with_dll\\FunctionBuilder.Logic\\FunctionBuilder.Logic\\FunctionBuilder.Logic.csproj": {}
+    "C:\\Users\\Максим\\source\\repos\\OPZ_with_dll\\Drawer\\Avalonia\\Avalonia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Максим\\source\\repos\\OPZ_with_dll\\FunctionBuilder.Logic\\FunctionBuilder.Logic\\FunctionBuilder.Logic.csproj": {
+    "C:\\Users\\Максим\\source\\repos\\OPZ_with_dll\\Drawer\\Avalonia\\Avalonia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Максим\\source\\repos\\OPZ_with_dll\\FunctionBuilder.Logic\\FunctionBuilder.Logic\\FunctionBuilder.Logic.csproj",
-        "projectName": "FunctionBuilder.Logic",
-        "projectPath": "C:\\Users\\Максим\\source\\repos\\OPZ_with_dll\\FunctionBuilder.Logic\\FunctionBuilder.Logic\\FunctionBuilder.Logic.csproj",
+        "projectUniqueName": "C:\\Users\\Максим\\source\\repos\\OPZ_with_dll\\Drawer\\Avalonia\\Avalonia.csproj",
+        "projectName": "Avalonia",
+        "projectPath": "C:\\Users\\Максим\\source\\repos\\OPZ_with_dll\\Drawer\\Avalonia\\Avalonia.csproj",
         "packagesPath": "C:\\Users\\Максим\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Максим\\source\\repos\\OPZ_with_dll\\FunctionBuilder.Logic\\FunctionBuilder.Logic\\obj\\",
+        "outputPath": "C:\\Users\\Максим\\source\\repos\\OPZ_with_dll\\Drawer\\Avalonia\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Максим\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -37,14 +37,20 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
-            "NETStandard.Library": {
-              "suppressParent": "All",
+            "Avalonia": {
               "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
+              "version": "[0.10.0, )"
+            },
+            "Avalonia.Desktop": {
+              "target": "Package",
+              "version": "[0.10.0, )"
+            },
+            "Avalonia.Diagnostics": {
+              "target": "Package",
+              "version": "[0.10.0, )"
             }
           },
           "imports": [
@@ -57,6 +63,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
