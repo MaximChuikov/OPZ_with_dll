@@ -130,3 +130,11 @@ C:\Users\Максим\source\repos\AvaloniaApplication1\AvaloniaApplication1\obj
 C:\Users\Максим\source\repos\AvaloniaApplication1\AvaloniaApplication1\obj\Debug\net5.0\AvaloniaApplication1.genruntimeconfig.cache
 C:\Users\Максим\source\repos\AvaloniaApplication1\AvaloniaApplication1\bin\Debug\net5.0\FunctionBuilder.Logic.dll
 C:\Users\Максим\source\repos\AvaloniaApplication1\AvaloniaApplication1\bin\Debug\net5.0\FunctionBuilder.Logic.pdb
+C:\Users\Максим\source\repos\OPZ_with_dll\Avalonia\AvaloniaApplication1\obj\Debug\net5.0\AvaloniaApplication1.csprojAssemblyReference.cache
+C:\Users\Максим\source\repos\OPZ_with_dll\Avalonia\AvaloniaApplication1\obj\Debug\net5.0\AvaloniaApplication1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Максим\source\repos\OPZ_with_dll\Avalonia\AvaloniaApplication1\obj\Debug\net5.0\AvaloniaApplication1.AssemblyInfoInputs.cache
+C:\Users\Максим\source\repos\OPZ_with_dll\Avalonia\AvaloniaApplication1\obj\Debug\net5.0\AvaloniaApplication1.AssemblyInfo.cs
+C:\Users\Максим\source\repos\OPZ_with_dll\Avalonia\AvaloniaApplication1\obj\Debug\net5.0\AvaloniaApplication1.csproj.CoreCompileInputs.cache
+C:\Users\Максим\source\repos\OPZ_with_dll\Avalonia\AvaloniaApplication1\obj\Debug\net5.0\AvaloniaApplication1.dll
+C:\Users\Максим\source\repos\OPZ_with_dll\Avalonia\AvaloniaApplication1\obj\Debug\net5.0\ref\AvaloniaApplication1.dll
+C:\Users\Максим\source\repos\OPZ_with_dll\Avalonia\AvaloniaApplication1\obj\Debug\net5.0\AvaloniaApplication1.pdb
