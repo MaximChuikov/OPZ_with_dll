@@ -162,7 +162,7 @@ namespace FunctionBuilder.Logic
                 case ")":
                     return new Parenthessis(operation);
                 default:
-                    throw new Exception("Unkown operation" + operation);
+                    throw new Exception("Unkown operation " + operation);
             }
         }
     }
