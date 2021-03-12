@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia", "Avalonia\Avalonia.csproj", "{E9E9E83F-EE6E-440D-9C90-FDC7ED214637}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF", "WPF\WPF.csproj", "{F9E2A807-09F3-4B09-A123-95301D236F58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{E9E9E83F-EE6E-440D-9C90-FDC7ED214637}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9E9E83F-EE6E-440D-9C90-FDC7ED214637}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9E9E83F-EE6E-440D-9C90-FDC7ED214637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9E2A807-09F3-4B09-A123-95301D236F58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9E2A807-09F3-4B09-A123-95301D236F58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9E2A807-09F3-4B09-A123-95301D236F58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9E2A807-09F3-4B09-A123-95301D236F58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
