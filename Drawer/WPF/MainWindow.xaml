@@ -1,0 +1,54 @@
+﻿<Window x:Class="WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        mc:Ignorable="d"
+        Title="Calculator" Height="450" Width="800"
+        FontSize="15">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#FF4530" Offset=".4"></GradientStop>
+                <GradientStop Color="#FCA235" Offset=".99"></GradientStop>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <DockPanel HorizontalAlignment="Stretch">
+                <TextBlock Background="#FF5630" Foreground="Black">y=</TextBlock>
+                <TextBox Name="boxExp" MinWidth="50"/>
+                <TextBlock Name="tbAnswer"/>
+            </DockPanel>
+
+            <DockPanel HorizontalAlignment="Left">
+                <Button Click="Calcul1" Background="#863dff" Foreground="White">Посчитать</Button>
+                <TextBox x:Name="boxAloneX" MinWidth="30"></TextBox>
+            </DockPanel>
+
+            <DockPanel HorizontalAlignment="Left">
+                <TextBlock Background="#FF5630" Foreground="Black">X=</TextBlock>
+                <TextBox Name="boxBeforeX" MinWidth="30"></TextBox>
+                <TextBox Name="boxAfterX" MinWidth="30"></TextBox>
+            </DockPanel>
+
+            <DockPanel HorizontalAlignment="Left">
+                <TextBlock Background="#FF5630" Foreground="Black">Шаг</TextBlock>
+                <TextBox Name="boxStep" MinWidth="30"></TextBox>
+            </DockPanel>
+
+            <Button Click="Calcul2" Background="#863dff" Foreground="White" HorizontalAlignment="Left">Посчитать</Button>
+            <ListBox Name="lbShowXY" Foreground ="Green" Background="White" Visibility="Hidden" MaxHeight="70"></ListBox>
+        </StackPanel>
+
+        <Border BorderThickness="5" BorderBrush="DarkGray"  Grid.Row="1" Margin="3,0,3,3">
+            <Canvas x:Name="canvas" SizeChanged="Size"/>
+        </Border>
+    </Grid>
+</Window>
