@@ -48,7 +48,14 @@
         </StackPanel>
 
         <Border BorderThickness="5" BorderBrush="DarkGray"  Grid.Row="1" Margin="3,0,3,3">
-            <Canvas x:Name="canvas" SizeChanged="Size"/>
+            <Canvas x:Name="canvas" 
+                    SizeChanged="Size" 
+                    MouseMove="Canvas_MouseMove" 
+                    MouseLeftButtonDown="Canvas_MouseDown"
+                    MouseWheel="Canvas_MouseWheel"
+                    MouseRightButtonDown="Canvas_MouseRightButtonDown"
+                    Background="Transparent">
+            </Canvas>
         </Border>
     </Grid>
 </Window>

@@ -177,6 +177,22 @@ namespace FunctionBuilder.Logic
             return (decimal)Math.Log((double)args[1], (double)args[0]);
         }
     }
+    class Abs : Operation
+    {
+        public override string Name => "abs";
+        public override int Priority => 5;
+        public override int Args => 1;
+        public override bool IsPrefix => true;
+        public override bool IsMiddle => false;
+        public override bool IsPostfix => false;
+
+        public override decimal Count(decimal[] args)
+        {
+            if (args.Length != 1)
+                throw new Exception("Нужен 1 аргумент");
+            return (decimal)Math.Abs((double)args[0]);
+        }
+    }
     class Minus : Operation
     {
         public override string Name => "-";

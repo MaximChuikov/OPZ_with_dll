@@ -145,6 +145,8 @@ namespace FunctionBuilder.Logic
                     return new Divide();
                 case "log":
                     return new Log();
+                case "abs":
+                    return new Abs();
                 case "sqrt":
                     return new Sqrt();
                 case "^":
